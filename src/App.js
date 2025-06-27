@@ -13,7 +13,7 @@ function App() {
 
   // GET all items
   const fetchItems = () => {
-    fetch('http://localhost:5000/items/')
+    fetch('https://backend-1-0vw8.onrender.com/items/')
       .then(res => res.json())
       .then(data => setItems(data))
       .catch(err => console.error('Error fetching items:', err));
@@ -21,7 +21,7 @@ function App() {
 
   // POST new item
   const addItem = () => {
-    fetch('http://localhost:5000/items/', {
+    fetch('https://backend-1-0vw8.onrender.com/items/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: newItem }),
@@ -37,7 +37,7 @@ function App() {
   const updateItem = () => {
     if (!editItemId) return alert("Select an item to update.");
 
-    fetch(`http://localhost:5000/items/${editItemId}`, {
+    fetch(`https://backend-1-0vw8.onrender.com/items/${editItemId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: changeItem }),
@@ -56,7 +56,7 @@ function App() {
 
   // DELETE item
   const deleteItem = (id) => {
-    fetch(`http://localhost:5000/items/${id}`, {
+    fetch(`https://backend-1-0vw8.onrender.com/items/${id}`, {
       method: 'DELETE',
     })
       .then(() => fetchItems())
